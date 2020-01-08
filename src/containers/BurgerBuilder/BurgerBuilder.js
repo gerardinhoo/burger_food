@@ -22,6 +22,8 @@ class BurgerBuilder extends Component {
     //     this.state = {...}
     // }
     state = {
+        ingredients: null,
+        totalPrice: 4,
         purchasable: false,
         purchasing: false,
         loading: false,
@@ -30,13 +32,13 @@ class BurgerBuilder extends Component {
 
     componentDidMount() {
         console.log(this.props);
-        axios.get('https://burger-react-dee76.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({ ingredients: response.data });
-            })
-            .catch(error => {
-                this.setState({ error: true });
-            });
+        // axios.get('https://burger-react-dee76.firebaseio.com/ingredients.json')
+        //     .then(response => {
+        //         this.setState({ ingredients: response.data });
+        //     })
+        //     .catch(error => {
+        //         this.setState({ error: true });
+        //     });
     }
 
     updatePurchaseState(ingredients) {
